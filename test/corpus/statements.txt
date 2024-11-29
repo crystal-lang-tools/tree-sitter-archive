@@ -289,85 +289,75 @@ protected abstract def baz(type : T) : U forall T, U
 
 (source_file
   (def
-    (method_def
-      (identifier)))
+    (identifier))
   (def
-    (method_def
-      (identifier)))
+    (identifier))
   (def
-    (method_def
+    (identifier)
+    (constant)
+    (string
+      (quoted_string)))
+  (def
+    (identifier)
+    (method_param
+      (identifier))
+    (method_param
+      (identifier))
+    (binary_operation
       (identifier)
-      (constant)
+      (operator)
+      (identifier)))
+  (def
+    (identifier)
+    (method_param
+      (identifier))
+    (method_param
+      (identifier)))
+  (def
+    (private)
+    (identifier)
+    (method_param
+      (identifier)
+      (constant))
+    (constant)
+    (binary_operation
       (string
-        (quoted_string))))
-  (def
-    (method_def
-      (identifier)
-      (method_param
-        (identifier))
-      (method_param
-        (identifier))
-      (binary_operation
-        (identifier)
-        (operator)
-        (identifier))))
-  (def
-    (method_def
-      (identifier)
-      (method_param
-        (identifier))
-      (method_param
-        (identifier))))
-  (def
-    (method_def
-      (private)
-      (identifier)
-      (method_param
-        (identifier)
-        (constant))
-      (constant)
-      (binary_operation
-        (string
-          (quoted_string))
-        (operator)
-        (identifier))))
-  (def
-    (method_def
-      (protected)
-      (identifier)
-      (method_param
-        (identifier)
-        (constant))
-      (method_param
-        (identifier)
-        (constant))
-      (constant)
-      (constant)
-      (binary_operation
-        (identifier)
-        (operator)
-        (identifier))))
-  (def
-    (abstract_def
+        (quoted_string))
+      (operator)
       (identifier)))
   (def
-    (abstract_def
-      (private)
+    (protected)
+    (identifier)
+    (method_param
       (identifier)
-      (method_param
-        (identifier)
-        (constant))
-      (constant)))
-  (def
-    (abstract_def
-      (protected)
+      (constant))
+    (method_param
       (identifier)
-      (method_param
-        (identifier)
-        (constant))
-      (constant)
-      (constant)
-      (constant))))
+      (constant))
+    (constant)
+    (constant)
+    (binary_operation
+      (identifier)
+      (operator)
+      (identifier)))
+  (abstract_def
+    (identifier))
+  (abstract_def
+    (private)
+    (identifier)
+    (method_param
+      (identifier)
+      (constant))
+    (constant))
+  (abstract_def
+    (protected)
+    (identifier)
+    (method_param
+      (identifier)
+      (constant))
+    (constant)
+    (constant)
+    (constant)))
 
 =================
 Require statement
