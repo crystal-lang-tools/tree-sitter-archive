@@ -1,0 +1,69 @@
+#!/bin/env crystal
+require "colorize"
+
+PASS = "pass".colorize.green
+FAIL = "fail".colorize.red
+
+class Test
+  getter file_path : String
+  getter label : String
+  getter elapsed : Time::Span = Time::Span::ZERO
+
+  def initialize(@file_path, @label)
+  end
+
+  def execute : Bool
+    process = Process.new("tree-sitter parse #{@file_path}", shell: true)
+    start_time = Time.monotonic
+    status = process.wait
+    @elapsed = Time.monotonic - start_time
+    status.success?
+  end
+end
+
+def info(key, value)
+  puts "#{key}: #{value.colorize.blue}"
+end
+
+def find_stdlib_files
+  # Find stdlib path and version
+  stdlib_path = Crystal::PATH.split(":").find do |path|
+    File.exists?(Path[path, "array.cr"])
+  end
+  abort("Stdlib path not found.") if stdlib_path.nil?
+
+  stdlib_version = File.read(Path[stdlib_path, "VERSION"]).strip
+
+  info("stdlib version", stdlib_version)
+  info("stdlib path", stdlib_path)
+
+  # Grab all stdlib files
+  {stdlib_path, Dir["#{stdlib_path}/**/*.cr"].sort!}
+end
+
+stdlib_path, stdlib_files = find_stdlib_files
+pass = 0
+
+expected_fail = File.read("#{__DIR__}/stdlib_expected_to_fail.txt").split
+failed = [] of String
+
+stdlib_files.each do |stdlib_file|
+  test = Test.new(stdlib_file, stdlib_file[(stdlib_path.size + 1)..])
+  success = test.execute
+
+  if success
+    pass += 1
+  else
+    failed << test.label
+  end
+  elapsed_ms = "#{test.elapsed.total_milliseconds}ms".colorize.dark_gray
+  # Why 63? So we match 80 columns.
+  printf("%-63s %s %s\n", test.label, success ? PASS : FAIL, elapsed_ms)
+end
+
+printf("%% of success: %.2f%%\n", pass / stdlib_files.size)
+
+File.write("#{__DIR__}/stdlib_failed.txt", failed.join("\n"))
+if failed != expected_fail
+  abort("List of failed tests difer, check stdlib_failed.txt and stdlib_expected_to_fail.txt".colorize.red)
+end
