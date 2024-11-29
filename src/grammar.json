@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "crystal",
   "word": "identifier",
   "rules": {
@@ -156,8 +157,12 @@
           "value": "class"
         },
         {
-          "type": "SYMBOL",
-          "name": "constant"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "type_name"
+          }
         },
         {
           "type": "CHOICE",
@@ -225,8 +230,12 @@
           "value": "struct"
         },
         {
-          "type": "SYMBOL",
-          "name": "constant"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "type_name"
+          }
         },
         {
           "type": "CHOICE",
@@ -262,6 +271,60 @@
         }
       ]
     },
+    "type_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "constant"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "generics"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "generics": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "constant"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "type_name"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
     "inherit": {
       "type": "SEQ",
       "members": [
@@ -271,7 +334,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "constant"
+          "name": "type_name"
         }
       ]
     },
@@ -295,8 +358,12 @@
           "value": "module"
         },
         {
-          "type": "SYMBOL",
-          "name": "constant"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "type_name"
+          }
         },
         {
           "type": "SYMBOL",

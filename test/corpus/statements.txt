@@ -24,33 +24,84 @@ end
 private abstract class MyClass
 end
 
+class MyClass(T)
+end
+
+class MyClass(Param) < MySuperClass
+end
+
+class MyClass < MySuperClass(Param)
+end
+
+class MyClass(Param, Param(Param, Param))
+end
 ---
 
 (source_file
   (class
-    (constant))
-  (class
-    (constant))
-	(class
-		(constant)
-    (inherit
+    (type_name
       (constant)))
-	(class
-		(constant)
-		(string
-			(quoted_string))
-		(string
-			(quoted_string)))
+  (class
+    (type_name
+      (constant)))
+  (class
+    (type_name
+      (constant))
+    (inherit
+      (type_name
+        (constant))))
+  (class
+    (type_name
+      (constant))
+    (string
+      (quoted_string))
+    (string
+      (quoted_string)))
   (class
     (abstract)
-    (constant))
+    (type_name
+      (constant)))
   (class
     (private)
-    (constant))
+    (type_name
+      (constant)))
   (class
     (private)
     (abstract)
-    (constant)))
+    (type_name
+      (constant)))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (constant))))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (constant)))
+    (inherit
+      (type_name
+        (constant))))
+  (class
+    (type_name
+      (constant))
+    (inherit
+      (type_name
+        (constant)
+        (generics
+          (constant)))))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (constant)
+        (type_name
+          (constant)
+          (generics
+            (constant)
+            (type_name
+              (constant))))))))
 
 =================
 Struct definition
@@ -77,31 +128,69 @@ end
 private abstract struct MyStruct
 end
 
+class MyStruct(Param)
+end
+
+class MyStruct(Param) < SuperStruct
+end
+
+class MyStruct < SuperStruct(Param)
+end
+
 ---
 
 (source_file
   (struct
-    (constant))
-  (struct
-    (constant))
-  (struct
-    (constant)
-    (inherit
+    (type_name
       (constant)))
   (struct
-    (constant)
+    (type_name
+      (constant)))
+  (struct
+    (type_name
+      (constant))
+    (inherit
+      (type_name
+        (constant))))
+  (struct
+    (type_name
+      (constant))
     (string
       (quoted_string)))
   (struct
     (abstract)
-    (constant))
+    (type_name
+      (constant)))
   (struct
     (private)
-    (constant))
+    (type_name
+      (constant)))
   (struct
     (private)
     (abstract)
-    (constant)))
+    (type_name
+      (constant)))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (constant))))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (constant)))
+    (inherit
+      (type_name
+        (constant))))
+  (class
+    (type_name
+      (constant))
+    (inherit
+      (type_name
+        (constant)
+        (generics
+          (constant))))))
 
 =================
 Module definition
@@ -122,22 +211,44 @@ end
 private module MyMod
 end
 
+module MyMod(Param)
+end
+
+module MyMod(Param, Param)
+end
+
 ---
 
 (source_file
-	(module
-		(constant))
-	(module
-    (constant))
   (module
-    (constant)
-		(integer)
-		(integer)
-		(integer)
+    (type_name
+      (constant)))
+  (module
+    (type_name
+      (constant)))
+  (module
+    (type_name
+      (constant))
+    (integer)
+    (integer)
+    (integer)
     (integer))
   (module
     (private)
-    (constant)))
+    (type_name
+      (constant)))
+  (module
+    (type_name
+      (constant)
+      (generics
+        (constant))))
+  (module
+    (type_name
+      (constant)
+      (generics
+        (constant)
+        (type_name
+          (constant))))))
 
 ==================
 Method definitions
@@ -171,76 +282,76 @@ protected abstract def baz(type : T) : U forall T, U
 ---
 
 (source_file
-	(def
-		(method_def
-			(identifier)))
-	(def
-		(method_def
-			(identifier)
-			(constant)
-			(string
-				(quoted_string))))
-	(def
-		(method_def
-			(identifier)
-			(method_param
-				(identifier))
-			(method_param
-				(identifier))
-			(binary_operation
-				(identifier)
-				(operator)
-				(identifier))))
-	(def
-		(method_def
+  (def
+    (method_def
+      (identifier)))
+  (def
+    (method_def
+      (identifier)
+      (constant)
+      (string
+        (quoted_string))))
+  (def
+    (method_def
+      (identifier)
+      (method_param
+        (identifier))
+      (method_param
+        (identifier))
+      (binary_operation
+        (identifier)
+        (operator)
+        (identifier))))
+  (def
+    (method_def
       (private)
-			(identifier)
-			(method_param
-				(identifier)
-				(constant))
-			(constant)
-			(binary_operation
-				(string
-					(quoted_string))
-				(operator)
-				(identifier))))
-	(def
-		(method_def
+      (identifier)
+      (method_param
+        (identifier)
+        (constant))
+      (constant)
+      (binary_operation
+        (string
+          (quoted_string))
+        (operator)
+        (identifier))))
+  (def
+    (method_def
       (protected)
-			(identifier)
-			(method_param
-				(identifier)
-				(constant))
-			(method_param
-				(identifier)
-				(constant))
-			(constant)
-			(constant)
-			(binary_operation
-				(identifier)
-				(operator)
-				(identifier))))
-	(def
-		(abstract_def
-			(identifier)))
-	(def
-		(abstract_def
+      (identifier)
+      (method_param
+        (identifier)
+        (constant))
+      (method_param
+        (identifier)
+        (constant))
+      (constant)
+      (constant)
+      (binary_operation
+        (identifier)
+        (operator)
+        (identifier))))
+  (def
+    (abstract_def
+      (identifier)))
+  (def
+    (abstract_def
       (private)
-			(identifier)
-			(method_param
-				(identifier)
-				(constant))
-			(constant)))
-	(def
-		(abstract_def
+      (identifier)
+      (method_param
+        (identifier)
+        (constant))
+      (constant)))
+  (def
+    (abstract_def
       (protected)
-			(identifier)
-			(method_param
-				(identifier)
-				(constant))
-			(constant)
-			(constant)
-			(constant))))
+      (identifier)
+      (method_param
+        (identifier)
+        (constant))
+      (constant)
+      (constant)
+      (constant))))
 
 =================
 Require statement
@@ -290,11 +401,13 @@ end
   (include
     (constant))
   (module
-    (constant)
+    (type_name
+      (constant))
     (include
       (constant)))
   (module
-    (constant)
+    (type_name
+      (constant))
     (include
       (constant))))
 
@@ -318,10 +431,12 @@ end
   (extend
     (constant))
   (module
-    (constant)
+    (type_name
+      (constant))
     (extend
       (constant)))
   (module
-    (constant)
+    (type_name
+      (constant))
     (extend
       (self))))

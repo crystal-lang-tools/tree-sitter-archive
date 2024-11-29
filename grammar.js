@@ -78,7 +78,7 @@ module.exports = grammar({
         optional($.private),
         optional($.abstract),
         'class',
-        $.constant,
+        field('name', $.type_name),
         optional($.inherit),
         $._terminator,
         optional($._statements),
@@ -90,20 +90,24 @@ module.exports = grammar({
         optional($.private),
         optional($.abstract),
         'struct',
-        $.constant,
+        field('name', $.type_name),
         optional($.inherit),
         $._terminator,
         optional($._statements),
         'end',
       ),
 
-    inherit: $ => seq('<', $.constant),
+    type_name: $ => seq($.constant, optional($.generics)),
+
+    generics: $ => seq('(', $.constant, repeat(seq(',', $.type_name)), ')'),
+
+    inherit: $ => seq('<', $.type_name),
 
     module: $ =>
       seq(
         optional($.private),
         'module',
-        $.constant,
+        field('name', $.type_name),
         $._terminator,
         optional($._statements),
         'end',
