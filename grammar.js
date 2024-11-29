@@ -69,6 +69,7 @@ module.exports = grammar({
         $.module,
         $.include,
         $.extend,
+        $.abstract_def,
         $.def,
         $._expression,
       ),
@@ -117,8 +118,6 @@ module.exports = grammar({
 
     extend: $ => seq('extend', choice($.constant, $.self)),
 
-    def: $ => choice($.abstract_def, $.method_def),
-
     _base_def: $ =>
       prec.right(
         seq(
@@ -157,7 +156,7 @@ module.exports = grammar({
     abstract_def: $ =>
       seq(optional(choice($.private, $.protected)), 'abstract', $._base_def),
 
-    method_def: $ =>
+    def: $ =>
       seq(
         optional(choice($.private, $.protected)),
         $._base_def,

@@ -117,6 +117,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "abstract_def"
+        },
+        {
+          "type": "SYMBOL",
           "name": "def"
         },
         {
@@ -422,19 +426,6 @@
         }
       ]
     },
-    "def": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "abstract_def"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "method_def"
-        }
-      ]
-    },
     "_base_def": {
       "type": "PREC_RIGHT",
       "value": 0,
@@ -669,7 +660,7 @@
         }
       ]
     },
-    "method_def": {
+    "def": {
       "type": "SEQ",
       "members": [
         {
