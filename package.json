@@ -8,7 +8,7 @@
     "format": "prettier --write ./grammar.js",
     "lint": "eslint grammar.js",
     "generate": "tree-sitter generate",
-    "test": "tree-sitter test",
+    "test": "tree-sitter test;test/real_world/stdlib",
     "install": "node-gyp-build",
     "prebuildify": "prebuildify --napi --strip"
   },
