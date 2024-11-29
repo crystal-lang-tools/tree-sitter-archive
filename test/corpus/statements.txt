@@ -257,12 +257,18 @@ Method definitions
 def empty
 end
 
+def empty()
+end
+
 def say : Nil
 	"hello world"
 end
 
 def add(a, b)
 	a + b
+end
+
+def add(a, b,)
 end
 
 private def greet(name : String) : Nil
@@ -287,6 +293,9 @@ protected abstract def baz(type : T) : U forall T, U
       (identifier)))
   (def
     (method_def
+      (identifier)))
+  (def
+    (method_def
       (identifier)
       (constant)
       (string
@@ -301,6 +310,13 @@ protected abstract def baz(type : T) : U forall T, U
       (binary_operation
         (identifier)
         (operator)
+        (identifier))))
+  (def
+    (method_def
+      (identifier)
+      (method_param
+        (identifier))
+      (method_param
         (identifier))))
   (def
     (method_def

@@ -130,10 +130,12 @@ module.exports = grammar({
               'params',
               seq(
                 '(',
-                seq(
-                  $.method_param,
-                  repeat(seq(',', $.method_param)),
-                  optional(','),
+                optional(
+                  seq(
+                    $.method_param,
+                    repeat(seq(',', $.method_param)),
+                    optional(','),
+                  )
                 ),
                 // optional(seq($.splat_param, optional(','))),
                 // optional(seq($.double_splat_param, optional(','))),
