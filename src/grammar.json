@@ -305,7 +305,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "constant"
+          "name": "type_name"
         },
         {
           "type": "REPEAT",
@@ -322,6 +322,18 @@
               }
             ]
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",

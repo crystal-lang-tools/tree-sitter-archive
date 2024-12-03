@@ -157,7 +157,8 @@ Array literals
     (type_name
       (constant)
       (generics
-        (constant)))))
+        (type_name
+          (constant))))))
 
 =============
 Hash literals
@@ -206,11 +207,13 @@ Hash literals
     (type_name
       (constant)
       (generics
-        (constant)))
+        (type_name
+          (constant))))
     (type_name
       (constant)
       (generics
-        (constant)))))
+        (type_name
+          (constant))))))
 
 =============
 Proc literals
@@ -284,7 +287,8 @@ end
       (type_name
         (constant)
         (generics
-          (constant))))
+          (type_name
+            (constant)))))
     (block
       (brace_block))))
 
