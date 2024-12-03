@@ -35,6 +35,13 @@ end
 
 class MyClass(Param, Param(Param, Param))
 end
+
+class MyClass(Param(Another(T)))
+end
+
+class MyClass(Param,)
+end
+
 ---
 
 (source_file
@@ -74,12 +81,14 @@ end
     (type_name
       (constant)
       (generics
-        (constant))))
+        (type_name
+          (constant)))))
   (class
     (type_name
       (constant)
       (generics
-        (constant)))
+        (type_name
+          (constant))))
     (inherit
       (type_name
         (constant))))
@@ -90,18 +99,39 @@ end
       (type_name
         (constant)
         (generics
-          (constant)))))
+          (type_name
+            (constant))))))
   (class
     (type_name
       (constant)
       (generics
-        (constant)
+        (type_name
+          (constant))
         (type_name
           (constant)
           (generics
-            (constant)
             (type_name
-              (constant))))))))
+              (constant))
+            (type_name
+              (constant)))))))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (type_name
+          (constant)
+          (generics
+            (type_name
+              (constant)
+              (generics
+                (type_name
+                  (constant)))))))))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (type_name
+          (constant))))))
 
 =================
 Struct definition
@@ -135,6 +165,12 @@ class MyStruct(Param) < SuperStruct
 end
 
 class MyStruct < SuperStruct(Param)
+end
+
+class MyStruct(Param(Another(T)))
+end
+
+class MyStruct(Param,)
 end
 
 ---
@@ -174,12 +210,14 @@ end
     (type_name
       (constant)
       (generics
-        (constant))))
+        (type_name
+          (constant)))))
   (class
     (type_name
       (constant)
       (generics
-        (constant)))
+        (type_name
+          (constant))))
     (inherit
       (type_name
         (constant))))
@@ -190,6 +228,25 @@ end
       (type_name
         (constant)
         (generics
+          (type_name
+            (constant))))))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (type_name
+          (constant)
+          (generics
+            (type_name
+              (constant)
+              (generics
+                (type_name
+                  (constant)))))))))
+  (class
+    (type_name
+      (constant)
+      (generics
+        (type_name
           (constant))))))
 
 =================
@@ -241,12 +298,14 @@ end
     (type_name
       (constant)
       (generics
-        (constant))))
+        (type_name
+          (constant)))))
   (module
     (type_name
       (constant)
       (generics
-        (constant)
+        (type_name
+          (constant))
         (type_name
           (constant))))))
 
@@ -324,11 +383,13 @@ protected abstract def baz(type : T) : U forall T, U
       (type_name
         (constant)
         (generics
-          (constant))))
+          (type_name
+            (constant)))))
     (type_name
       (constant)
       (generics
-        (constant)))
+        (type_name
+          (constant))))
     (constant))
   (def
     (private)

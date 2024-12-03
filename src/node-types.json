@@ -1248,10 +1248,6 @@
       "required": true,
       "types": [
         {
-          "type": "constant",
-          "named": true
-        },
-        {
           "type": "type_name",
           "named": true
         }

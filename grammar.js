@@ -100,7 +100,7 @@ module.exports = grammar({
 
     type_name: $ => seq($.constant, optional($.generics)),
 
-    generics: $ => seq('(', $.constant, repeat(seq(',', $.type_name)), ')'),
+    generics: $ => seq('(', $.type_name, repeat(seq(',', $.type_name)), optional(','), ')'),
 
     inherit: $ => seq('<', $.type_name),
 
