@@ -41,6 +41,10 @@
           {
             "type": "forall",
             "named": false
+          },
+          {
+            "type": "type_name",
+            "named": true
           }
         ]
       },
@@ -165,7 +169,7 @@
             "named": false
           },
           {
-            "type": "constant",
+            "type": "type_name",
             "named": true
           }
         ]
@@ -284,6 +288,10 @@
         },
         {
           "type": "true",
+          "named": true
+        },
+        {
+          "type": "type_name",
           "named": true
         }
       ]
@@ -795,6 +803,10 @@
           {
             "type": "forall",
             "named": false
+          },
+          {
+            "type": "type_name",
+            "named": true
           }
         ]
       },
@@ -919,7 +931,7 @@
             "named": false
           },
           {
-            "type": "constant",
+            "type": "type_name",
             "named": true
           }
         ]
@@ -1255,7 +1267,7 @@
         "required": false,
         "types": [
           {
-            "type": "constant",
+            "type": "type_name",
             "named": true
           }
         ]
@@ -1265,7 +1277,7 @@
         "required": false,
         "types": [
           {
-            "type": "constant",
+            "type": "type_name",
             "named": true
           }
         ]
@@ -1547,7 +1559,7 @@
         "required": false,
         "types": [
           {
-            "type": "constant",
+            "type": "type_name",
             "named": true
           }
         ]
@@ -1737,7 +1749,7 @@
         "required": false,
         "types": [
           {
-            "type": "constant",
+            "type": "type_name",
             "named": true
           }
         ]
@@ -1773,7 +1785,7 @@
         "required": false,
         "types": [
           {
-            "type": "constant",
+            "type": "type_name",
             "named": true
           }
         ]
