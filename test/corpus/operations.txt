@@ -1,7 +1,7 @@
 ===============
 Infix operators
 ===============
-
+as
 1 + 1
 
 2 - 2
@@ -11,16 +11,17 @@ Infix operators
 ---
 
 (source_file
-	(binary_operation
-		(integer)
-		(operator)
-		(integer))
-	(binary_operation
-		(integer)
-		(operator)
-		(integer))
-	(binary_operation
-		(integer)
-		(operator)
-		(string
-			(quoted_string))))
+  (identifier)
+  (binary_operation
+    (integer)
+    (operator)
+    (integer))
+  (binary_operation
+    (integer)
+    (operator)
+    (integer))
+  (binary_operation
+    (integer)
+    (operator)
+    (string
+      (quoted_string))))
