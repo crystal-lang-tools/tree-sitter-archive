@@ -134,6 +134,8 @@ Array literals
 
 [] of Int32
 
+[] of Foo(::Bar)
+
 ---
 
 (source_file
@@ -146,9 +148,16 @@ Array literals
       (quoted_string))
     (string
       (quoted_string))
-    (constant))
+    (type_name
+      (constant)))
   (array
-    (constant)))
+    (type_name
+      (constant)))
+  (array
+    (type_name
+      (constant)
+      (generics
+        (constant)))))
 
 =============
 Hash literals
@@ -162,6 +171,8 @@ Hash literals
 
 {1.2 => 1, 4.5 => 5} of Float32 => Int32
 
+{} of Generic(Type) => Generic(Type)
+
 ---
 
 (source_file
@@ -178,15 +189,28 @@ Hash literals
     (string
       (quoted_string)))
   (hash
-    (constant)
-    (constant))
+    (type_name
+      (constant))
+    (type_name
+      (constant)))
   (hash
     (float)
     (integer)
     (float)
     (integer)
-    (constant)
-    (constant)))
+    (type_name
+      (constant))
+    (type_name
+      (constant)))
+  (hash
+    (type_name
+      (constant)
+      (generics
+        (constant)))
+    (type_name
+      (constant)
+      (generics
+        (constant)))))
 
 =============
 Proc literals
@@ -209,6 +233,8 @@ end
   b
 end
 
+-> (a : Generic(Type)) { }
+
 ---
 
 (source_file
@@ -216,7 +242,8 @@ end
     (block
       (brace_block)))
   (proc
-    (constant)
+    (type_name
+      (constant))
     (block
       (brace_block
         (nil))))
@@ -241,14 +268,25 @@ end
   (proc
     (proc_param
       (identifier)
-      (constant))
+      (type_name
+        (constant)))
     (proc_param
       (identifier)
-      (constant))
+      (type_name
+        (constant)))
     (block
       (do_end_block
         (identifier)
-        (identifier)))))
+        (identifier))))
+  (proc
+    (proc_param
+      (identifier)
+      (type_name
+        (constant)
+        (generics
+          (constant))))
+    (block
+      (brace_block))))
 
 =============
 Char literals

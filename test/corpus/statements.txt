@@ -271,6 +271,9 @@ end
 def add(a, b,)
 end
 
+def foo(type : ::Module::Generic(T)) : ::Module::Generic(T) forall T
+end
+
 private def greet(name : String) : Nil
 	"Greetings, " + name
 end
@@ -294,7 +297,8 @@ protected abstract def baz(type : T) : U forall T, U
     (identifier))
   (def
     (identifier)
-    (constant)
+    (type_name
+      (constant))
     (string
       (quoted_string)))
   (def
@@ -314,12 +318,27 @@ protected abstract def baz(type : T) : U forall T, U
     (method_param
       (identifier)))
   (def
+    (identifier)
+    (method_param
+      (identifier)
+      (type_name
+        (constant)
+        (generics
+          (constant))))
+    (type_name
+      (constant)
+      (generics
+        (constant)))
+    (constant))
+  (def
     (private)
     (identifier)
     (method_param
       (identifier)
+      (type_name
+        (constant)))
+    (type_name
       (constant))
-    (constant)
     (binary_operation
       (string
         (quoted_string))
@@ -330,11 +349,14 @@ protected abstract def baz(type : T) : U forall T, U
     (identifier)
     (method_param
       (identifier)
-      (constant))
+      (type_name
+        (constant)))
     (method_param
       (identifier)
+      (type_name
+        (constant)))
+    (type_name
       (constant))
-    (constant)
     (constant)
     (binary_operation
       (identifier)
@@ -347,17 +369,21 @@ protected abstract def baz(type : T) : U forall T, U
     (identifier)
     (method_param
       (identifier)
-      (constant))
+      (type_name
+        (constant)))
     (constant))
   (abstract_def
     (protected)
     (identifier)
     (method_param
       (identifier)
+      (type_name
+        (constant)))
+    (type_name
       (constant))
     (constant)
-    (constant)
-    (constant)))
+    (type_name
+      (constant))))
 
 =================
 Require statement

@@ -572,7 +572,7 @@
                     },
                     {
                       "type": "SYMBOL",
-                      "name": "constant"
+                      "name": "type_name"
                     }
                   ]
                 }
@@ -610,7 +610,7 @@
                           },
                           {
                             "type": "SYMBOL",
-                            "name": "constant"
+                            "name": "type_name"
                           }
                         ]
                       }
@@ -1410,7 +1410,7 @@
                 },
                 {
                   "type": "SYMBOL",
-                  "name": "constant"
+                  "name": "type_name"
                 }
               ]
             },
@@ -1486,7 +1486,7 @@
                       "name": "key_type",
                       "content": {
                         "type": "SYMBOL",
-                        "name": "constant"
+                        "name": "type_name"
                       }
                     },
                     {
@@ -1498,7 +1498,7 @@
                       "name": "value_type",
                       "content": {
                         "type": "SYMBOL",
-                        "name": "constant"
+                        "name": "type_name"
                       }
                     }
                   ]
@@ -1530,7 +1530,7 @@
               "name": "key_type",
               "content": {
                 "type": "SYMBOL",
-                "name": "constant"
+                "name": "type_name"
               }
             },
             {
@@ -1542,7 +1542,7 @@
               "name": "value_type",
               "content": {
                 "type": "SYMBOL",
-                "name": "constant"
+                "name": "type_name"
               }
             }
           ]
@@ -1621,7 +1621,7 @@
                   "name": "return_type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "constant"
+                    "name": "type_name"
                   }
                 }
               ]
@@ -1663,7 +1663,7 @@
                   "name": "type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "constant"
+                    "name": "type_name"
                   }
                 }
               ]
@@ -1717,7 +1717,7 @@
                   "name": "type",
                   "content": {
                     "type": "SYMBOL",
-                    "name": "constant"
+                    "name": "type_name"
                   }
                 }
               ]

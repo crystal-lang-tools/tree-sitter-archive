@@ -143,11 +143,11 @@ module.exports = grammar({
               ),
             ),
           ),
-          optional(field('returns', seq(':', $.constant))),
+          optional(field('returns', seq(':', $.type_name))),
           optional(
             field(
               'forall',
-              seq('forall', $.constant, repeat(seq(',', $.constant))),
+              seq('forall', $.constant, repeat(seq(',', $.type_name))),
             ),
           ),
         ),
@@ -271,7 +271,7 @@ module.exports = grammar({
           ),
         ),
         ']',
-        optional(seq('of', $.constant)),
+        optional(seq('of', $.type_name)),
       ),
 
     hash: $ =>
@@ -286,9 +286,9 @@ module.exports = grammar({
           optional(
             seq(
               'of',
-              field('key_type', $.constant),
+              field('key_type', $.type_name),
               '=>',
-              field('value_type', $.constant),
+              field('value_type', $.type_name),
             ),
           ),
         ),
@@ -296,9 +296,9 @@ module.exports = grammar({
           '{',
           '}',
           'of',
-          field('key_type', $.constant),
+          field('key_type', $.type_name),
           '=>',
-          field('value_type', $.constant),
+          field('value_type', $.type_name),
         ),
       ),
 
@@ -316,14 +316,14 @@ module.exports = grammar({
             ')',
           ),
         ),
-        optional(seq(':', field('return_type', $.constant))),
+        optional(seq(':', field('return_type', $.type_name))),
         $.block,
       ),
 
     proc_param: $ =>
       seq(
         field('name', $.identifier), // support class/instance vars
-        optional(seq(':', field('type', $.constant))),
+        optional(seq(':', field('type', $.type_name))),
       ),
 
     method_param: $ =>
@@ -331,7 +331,7 @@ module.exports = grammar({
         // repeat($.annotation),
         optional(field('external_name', $.identifier)),
         field('name', $.identifier), // support class/instance vars
-        optional(seq(':', field('type', $.constant))),
+        optional(seq(':', field('type', $.type_name))),
         optional(seq('=', field('default_value', $._expression))),
       ),
 
