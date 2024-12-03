@@ -7,7 +7,8 @@ Quoted string literals
 ---
 
 (source_file
-	(string (quoted_string)))
+  (string
+    (quoted_string)))
 
 =======================
 Percent string literals
@@ -28,12 +29,18 @@ Percent string literals
 ---
 
 (source_file
-	(string (percent_string))
-	(string (percent_string))
-	(string (percent_string))
-	(string (percent_string))
-	(string (percent_string))
-	(string (percent_string)))
+  (string
+    (percent_string))
+  (string
+    (percent_string))
+  (string
+    (percent_string))
+  (string
+    (percent_string))
+  (string
+    (percent_string))
+  (string
+    (percent_string)))
 
 ==============
 Regex literals
@@ -48,10 +55,10 @@ Regex literals
 ---
 
 (source_file
-	(regex_literal)
-	(string
-		(quoted_string))
-	(regex_literal))
+  (regex_literal)
+  (string
+    (quoted_string))
+  (regex_literal))
 
 ================
 Integer literals
@@ -70,11 +77,11 @@ Integer literals
 ---
 
 (source_file
-	(integer)
-	(integer)
-	(integer)
-	(integer)
-	(integer))
+  (integer)
+  (integer)
+  (integer)
+  (integer)
+  (integer))
 
 ==============
 Float literals
@@ -89,9 +96,9 @@ Float literals
 ---
 
 (source_file
-	(float)
-	(float)
-	(float))
+  (float)
+  (float)
+  (float))
 
 ===========
 Nil literal
@@ -101,7 +108,8 @@ nil
 
 ---
 
-(source_file (nil))
+(source_file
+  (nil))
 
 ================
 Boolean literals
@@ -112,7 +120,9 @@ false
 
 ---
 
-(source_file (true) (false))
+(source_file
+  (true)
+  (false))
 
 ==============
 Array literals
@@ -127,15 +137,18 @@ Array literals
 ---
 
 (source_file
-	(array
-		(integer)
-		(integer)
-		(integer))
-	(array
-		(string (quoted_string))
-		(string (quoted_string))
-		(constant))
-	(array (constant)))
+  (array
+    (integer)
+    (integer)
+    (integer))
+  (array
+    (string
+      (quoted_string))
+    (string
+      (quoted_string))
+    (constant))
+  (array
+    (constant)))
 
 =============
 Hash literals
@@ -152,24 +165,28 @@ Hash literals
 ---
 
 (source_file
-	(hash
-		(string (quoted_string))
-		(string (quoted_string)))
-	(hash
-		(integer)
-		(string (quoted_string))
-		(integer)
-		(string (quoted_string)))
-	(hash
-		(constant)
-		(constant))
-	(hash
-		(float)
-		(integer)
-		(float)
-		(integer)
-		(constant)
-		(constant)))
+  (hash
+    (string
+      (quoted_string))
+    (string
+      (quoted_string)))
+  (hash
+    (integer)
+    (string
+      (quoted_string))
+    (integer)
+    (string
+      (quoted_string)))
+  (hash
+    (constant)
+    (constant))
+  (hash
+    (float)
+    (integer)
+    (float)
+    (integer)
+    (constant)
+    (constant)))
 
 =============
 Proc literals
@@ -195,35 +212,43 @@ end
 ---
 
 (source_file
-	(proc
-		(block (brace_block)))
-	(proc
-		(constant)
-		(block (brace_block
-			(nil))))
-	(proc
-		(block (do_end_block
-			(string (quoted_string)))))
-	(proc
-		(proc_param (identifier))
-		(block (brace_block
-			(identifier))))
-	(proc
-		(proc_param
-			(identifier))
-		(proc_param
-			(identifier))
-		(block (brace_block)))
-	(proc
-		(proc_param
-			(identifier)
-			(constant))
-		(proc_param
-			(identifier)
-			(constant))
-		(block (do_end_block
-			(identifier)
-			(identifier)))))
+  (proc
+    (block
+      (brace_block)))
+  (proc
+    (constant)
+    (block
+      (brace_block
+        (nil))))
+  (proc
+    (block
+      (do_end_block
+        (string
+          (quoted_string)))))
+  (proc
+    (proc_param
+      (identifier))
+    (block
+      (brace_block
+        (identifier))))
+  (proc
+    (proc_param
+      (identifier))
+    (proc_param
+      (identifier))
+    (block
+      (brace_block)))
+  (proc
+    (proc_param
+      (identifier)
+      (constant))
+    (proc_param
+      (identifier)
+      (constant))
+    (block
+      (do_end_block
+        (identifier)
+        (identifier)))))
 
 =============
 Char literals
@@ -250,15 +275,15 @@ Char literals
 ---
 
 (source_file
-	(char)
-	(char)
-	(char)
-	(char)
-	(char)
-	(char)
-	(char)
-	(char)
-	(char))
+  (char)
+  (char)
+  (char)
+  (char)
+  (char)
+  (char)
+  (char)
+  (char)
+  (char))
 
 ===============
 Symbol literals
@@ -296,12 +321,12 @@ self
 ---
 
 (source_file
-	(identifier)
-	(instance_variable
-		(identifier))
-	(class_variable
-		(identifier))
-	(self))
+  (identifier)
+  (instance_variable
+    (identifier))
+  (class_variable
+    (identifier))
+  (self))
 
 ========
 Comments
@@ -314,9 +339,9 @@ Comments
 ---
 
 (source_file
-	(comment)
-	(string
-		(quoted_string)))
+  (comment)
+  (string
+    (quoted_string)))
 
 ================
 Pseudo constants
