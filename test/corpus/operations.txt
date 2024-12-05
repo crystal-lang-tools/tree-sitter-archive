@@ -14,14 +14,56 @@ as
   (identifier)
   (binary_operation
     (integer)
-    (operator)
     (integer))
   (binary_operation
     (integer)
-    (operator)
     (integer))
   (binary_operation
     (integer)
-    (operator)
     (string
       (quoted_string))))
+
+===================
+Operator Precedence
+===================
+
+a + b * c
+a + b / c
+a * c + b
+a &+ b + c
+a * b &* c
+a == b + c
+
+---
+
+(source_file
+  (binary_operation
+    (identifier)
+    (binary_operation
+      (identifier)
+      (identifier)))
+  (binary_operation
+    (identifier)
+    (binary_operation
+      (identifier)
+      (identifier)))
+  (binary_operation
+    (binary_operation
+      (identifier)
+      (identifier))
+    (identifier))
+  (binary_operation
+    (binary_operation
+      (identifier)
+      (identifier))
+    (identifier))
+  (binary_operation
+    (binary_operation
+      (identifier)
+      (identifier))
+    (identifier))
+  (binary_operation
+    (identifier)
+    (binary_operation
+      (identifier)
+      (identifier))))
