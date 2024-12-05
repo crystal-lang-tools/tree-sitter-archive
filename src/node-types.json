@@ -267,6 +267,10 @@
           "named": true
         },
         {
+          "type": "heredoc",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -371,6 +375,10 @@
           },
           {
             "type": "hash",
+            "named": true
+          },
+          {
+            "type": "heredoc",
             "named": true
           },
           {
@@ -582,6 +590,10 @@
             "named": true
           },
           {
+            "type": "heredoc",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -741,6 +753,10 @@
           "named": true
         },
         {
+          "type": "heredoc",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -897,6 +913,10 @@
         },
         {
           "type": "hash",
+          "named": true
+        },
+        {
+          "type": "heredoc",
           "named": true
         },
         {
@@ -1259,6 +1279,10 @@
           "named": true
         },
         {
+          "type": "heredoc",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1407,6 +1431,10 @@
         },
         {
           "type": "hash",
+          "named": true
+        },
+        {
+          "type": "heredoc",
           "named": true
         },
         {
@@ -1593,6 +1621,133 @@
           "named": true
         },
         {
+          "type": "heredoc",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "instance_variable",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "line_pseudo_constant",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "proc",
+          "named": true
+        },
+        {
+          "type": "regex_literal",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "heredoc",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "binary_operation",
+          "named": true
+        },
+        {
+          "type": "char",
+          "named": true
+        },
+        {
+          "type": "class_variable",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "dir_pseudo_constant",
+          "named": true
+        },
+        {
+          "type": "endline_pseudo_constant",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "file_pseudo_constant",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "hash",
+          "named": true
+        },
+        {
+          "type": "heredoc",
+          "named": true
+        },
+        {
+          "type": "heredoc_arrow",
+          "named": true
+        },
+        {
+          "type": "heredoc_body_end",
+          "named": true
+        },
+        {
+          "type": "heredoc_body_part",
+          "named": true
+        },
+        {
+          "type": "heredoc_start",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -1743,6 +1898,10 @@
           },
           {
             "type": "hash",
+            "named": true
+          },
+          {
+            "type": "heredoc",
             "named": true
           },
           {
@@ -1904,6 +2063,10 @@
         },
         {
           "type": "hash",
+          "named": true
+        },
+        {
+          "type": "heredoc",
           "named": true
         },
         {
@@ -2130,6 +2293,10 @@
           "named": true
         },
         {
+          "type": "heredoc",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -2247,6 +2414,10 @@
         },
         {
           "type": "hash",
+          "named": true
+        },
+        {
+          "type": "heredoc",
           "named": true
         },
         {
@@ -2423,6 +2594,10 @@
           "named": true
         },
         {
+          "type": "heredoc",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -2549,6 +2724,10 @@
   },
   {
     "type": "#",
+    "named": false
+  },
+  {
+    "type": "#{",
     "named": false
   },
   {
@@ -2806,6 +2985,22 @@
   {
     "type": "forall",
     "named": false
+  },
+  {
+    "type": "heredoc_arrow",
+    "named": true
+  },
+  {
+    "type": "heredoc_body_end",
+    "named": true
+  },
+  {
+    "type": "heredoc_body_part",
+    "named": true
+  },
+  {
+    "type": "heredoc_start",
+    "named": true
   },
   {
     "type": "i128",

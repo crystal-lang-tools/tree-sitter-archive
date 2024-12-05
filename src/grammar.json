@@ -748,6 +748,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "heredoc"
+        },
+        {
+          "type": "SYMBOL",
           "name": "binary_operation"
         },
         {
@@ -837,6 +841,53 @@
         {
           "type": "SYMBOL",
           "name": "dir_pseudo_constant"
+        }
+      ]
+    },
+    "heredoc": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "heredoc_arrow"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "heredoc_start"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "heredoc_body_part"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_interpolation"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "heredoc_body_end"
+        }
+      ]
+    },
+    "_interpolation": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#{"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     },
@@ -3182,7 +3233,24 @@
       }
     ]
   ],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "heredoc_arrow"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "heredoc_start"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "heredoc_body_part"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "heredoc_body_end"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }

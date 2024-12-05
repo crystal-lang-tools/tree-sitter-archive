@@ -404,3 +404,45 @@ __DIR__
   (endline_pseudo_constant)
   (file_pseudo_constant)
   (dir_pseudo_constant))
+
+===============
+Heredoc literal
+===============
+
+<<-HEREDOC
+These are the contents of the heredoc
+HEREDOC
+
+---
+
+(source_file
+  (heredoc
+    (heredoc_arrow)
+    (heredoc_start)
+    (heredoc_body_part)
+    (heredoc_body_end)))
+
+===============
+Nested Heredocs
+===============
+
+<<-HEREDOC + <<-SQL
+These are the contents of the heredoc
+HEREDOC
+SQL heredoc contents
+SQL
+
+---
+
+(source_file
+  (binary_operation
+    (heredoc
+      (heredoc_arrow)
+      (heredoc_start)
+      (heredoc_body_part)
+      (heredoc_body_end)))
+    (heredoc
+      (heredoc_arrow)
+      (heredoc_start)
+      (heredoc_body_part)
+      (heredoc_body_end)))

@@ -25,6 +25,13 @@ const const_start = /[A-Z]/,
 module.exports = grammar({
   name: 'crystal',
 
+  externals: $ => [
+    $.heredoc_arrow,
+    $.heredoc_start,
+    $.heredoc_body_part,
+    $.heredoc_body_end
+  ],
+
   extras: $ => [/[\s\r\n]+/],
 
   word: $ => $.identifier,
@@ -182,6 +189,7 @@ module.exports = grammar({
 
     _expression: $ =>
       choice(
+        $.heredoc,
         $.binary_operation,
         $.string,
         $.regex_literal,
@@ -205,6 +213,20 @@ module.exports = grammar({
         $.endline_pseudo_constant,
         $.file_pseudo_constant,
         $.dir_pseudo_constant,
+      ),
+
+    heredoc: $ => seq(
+      $.heredoc_arrow,
+      $.heredoc_start,
+      seq($.heredoc_body_part, $._interpolation),
+      $.heredoc_body_end
+    ),
+
+    _interpolation: $ =>
+      seq(
+        "#{",
+        $._expression,
+        "}"
       ),
 
     string: $ => choice($.quoted_string, $.percent_string),
