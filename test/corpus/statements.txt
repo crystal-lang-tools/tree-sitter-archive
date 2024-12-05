@@ -368,7 +368,6 @@ protected abstract def baz(type : T) : U forall T, U
       (identifier))
     (binary_operation
       (identifier)
-      (operator)
       (identifier)))
   (def
     (identifier)
@@ -403,7 +402,6 @@ protected abstract def baz(type : T) : U forall T, U
     (binary_operation
       (string
         (quoted_string))
-      (operator)
       (identifier)))
   (def
     (protected)
@@ -421,7 +419,6 @@ protected abstract def baz(type : T) : U forall T, U
     (constant)
     (binary_operation
       (identifier)
-      (operator)
       (identifier)))
   (abstract_def
     (identifier))
@@ -469,7 +466,6 @@ require "big"
     (quoted_string))
   (binary_operation
     (integer)
-    (operator)
     (integer))
   (require
     (quoted_string)))

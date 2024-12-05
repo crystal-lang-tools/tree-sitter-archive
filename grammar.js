@@ -7,7 +7,20 @@ const const_start = /[A-Z]/,
     ['{', '}', '\\}'],
     ['<', '>', '>'],
     ['|', '|', '\\|'],
-  ];
+  ],
+  PREC = {
+    DEFAULT: 0,
+    LOGICAL_OR: 1,
+    LOGICAL_AND: 2,
+    INCLUSIVE_OR: 3,
+    EXCLUSIVE_OR: 4,
+    BITWISE_AND: 5,
+    EQUAL: 6,
+    RELATIONAL: 7,
+    SHIFT: 9,
+    ADD: 10,
+    MULTIPLY: 11,
+  };
 
 module.exports = grammar({
   name: 'crystal',
@@ -446,21 +459,56 @@ module.exports = grammar({
     //   prec('splat_operator', seq('**', token.immediate($._expression))),
 
     // https://github.com/will/tree-sitter-crystal/blob/15597b307b18028b04d288561f9c29794621562b/grammar.js#L545
-    binary_operation: $ =>
-      prec.left(
-        seq(
-          $._expression,
-          alias($._binary_operator, $.operator),
-          $._expression,
-        ),
-      ),
+    binary_operation: $ => {
+      const table = [
+        ['+', PREC.ADD],
+        ['&+', PREC.ADD],
+        ['-', PREC.ADD],
+        ['&-', PREC.ADD],
+        ['*', PREC.MULTIPLY],
+        ['&*', PREC.MULTIPLY],
+        ['/', PREC.MULTIPLY],
+        ['//', PREC.MULTIPLY],
+        ['%', PREC.MULTIPLY],
+        ['||', PREC.LOGICAL_OR],
+        ['&&', PREC.LOGICAL_AND],
+        ['|', PREC.INCLUSIVE_OR],
+        ['^', PREC.EXCLUSIVE_OR],
+        ['&', PREC.BITWISE_AND],
+        ['==', PREC.EQUAL],
+        ['=~', PREC.EQUAL],
+        ['!~', PREC.EQUAL],
+        ['===', PREC.EQUAL],
+        ['<=>', PREC.EQUAL],
+        ['!=', PREC.EQUAL],
+        ['>', PREC.RELATIONAL],
+        ['>=', PREC.RELATIONAL],
+        ['<=', PREC.RELATIONAL],
+        ['<', PREC.RELATIONAL],
+        ['<<', PREC.SHIFT],
+        ['>>', PREC.SHIFT],
+      ];
+
+      return choice(...table.map(([operator, precedence]) => {
+        return prec.left(precedence, seq(
+          field('left', $._expression),
+          // @ts-ignore
+          field('operator', operator),
+          field('right', $._expression),
+        ));
+      }));
+    },
 
     _binary_operator: $ =>
       choice(
         '+',
+        '&+',
         '-',
+        '&-',
         '*',
+        '&*',
         '/',
+        '//',
         '%',
         '&',
         '|',
@@ -477,6 +525,7 @@ module.exports = grammar({
         '<=>',
         '===',
         '=~',
+        '!~',
       ),
   },
 });

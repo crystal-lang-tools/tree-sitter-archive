@@ -57,11 +57,27 @@
             "named": false
           },
           {
+            "type": "!~",
+            "named": false
+          },
+          {
             "type": "%",
             "named": false
           },
           {
             "type": "&",
+            "named": false
+          },
+          {
+            "type": "&*",
+            "named": false
+          },
+          {
+            "type": "&+",
+            "named": false
+          },
+          {
+            "type": "&-",
             "named": false
           },
           {
@@ -82,6 +98,10 @@
           },
           {
             "type": "/",
+            "named": false
+          },
+          {
+            "type": "//",
             "named": false
           },
           {
@@ -300,108 +320,313 @@
   {
     "type": "binary_operation",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "array",
-          "named": true
-        },
-        {
-          "type": "binary_operation",
-          "named": true
-        },
-        {
-          "type": "char",
-          "named": true
-        },
-        {
-          "type": "class_variable",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "constant",
-          "named": true
-        },
-        {
-          "type": "dir_pseudo_constant",
-          "named": true
-        },
-        {
-          "type": "endline_pseudo_constant",
-          "named": true
-        },
-        {
-          "type": "false",
-          "named": true
-        },
-        {
-          "type": "file_pseudo_constant",
-          "named": true
-        },
-        {
-          "type": "float",
-          "named": true
-        },
-        {
-          "type": "hash",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "instance_variable",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "line_pseudo_constant",
-          "named": true
-        },
-        {
-          "type": "nil",
-          "named": true
-        },
-        {
-          "type": "operator",
-          "named": true
-        },
-        {
-          "type": "proc",
-          "named": true
-        },
-        {
-          "type": "regex_literal",
-          "named": true
-        },
-        {
-          "type": "self",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        },
-        {
-          "type": "symbol",
-          "named": true
-        },
-        {
-          "type": "true",
-          "named": true
-        }
-      ]
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "binary_operation",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "class_variable",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "dir_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "endline_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "file_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "hash",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "instance_variable",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "line_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "proc",
+            "named": true
+          },
+          {
+            "type": "regex_literal",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "!~",
+            "named": false
+          },
+          {
+            "type": "%",
+            "named": false
+          },
+          {
+            "type": "&",
+            "named": false
+          },
+          {
+            "type": "&&",
+            "named": false
+          },
+          {
+            "type": "&*",
+            "named": false
+          },
+          {
+            "type": "&+",
+            "named": false
+          },
+          {
+            "type": "&-",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "/",
+            "named": false
+          },
+          {
+            "type": "//",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "<=>",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": "===",
+            "named": false
+          },
+          {
+            "type": "=~",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": ">>",
+            "named": false
+          },
+          {
+            "type": "^",
+            "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
+            "named": false
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "binary_operation",
+            "named": true
+          },
+          {
+            "type": "char",
+            "named": true
+          },
+          {
+            "type": "class_variable",
+            "named": true
+          },
+          {
+            "type": "comment",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "dir_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "endline_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "file_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "hash",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "instance_variable",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "line_pseudo_constant",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "proc",
+            "named": true
+          },
+          {
+            "type": "regex_literal",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -819,11 +1044,27 @@
             "named": false
           },
           {
+            "type": "!~",
+            "named": false
+          },
+          {
             "type": "%",
             "named": false
           },
           {
             "type": "&",
+            "named": false
+          },
+          {
+            "type": "&*",
+            "named": false
+          },
+          {
+            "type": "&+",
+            "named": false
+          },
+          {
+            "type": "&-",
             "named": false
           },
           {
@@ -844,6 +1085,10 @@
           },
           {
             "type": "/",
+            "named": false
+          },
+          {
+            "type": "//",
             "named": false
           },
           {
@@ -1713,11 +1958,6 @@
     }
   },
   {
-    "type": "operator",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "percent_string",
     "named": true,
     "fields": {}
@@ -2169,6 +2409,10 @@
     "named": false
   },
   {
+    "type": "!~",
+    "named": false
+  },
+  {
     "type": "\"",
     "named": false
   },
@@ -2182,6 +2426,22 @@
   },
   {
     "type": "&",
+    "named": false
+  },
+  {
+    "type": "&&",
+    "named": false
+  },
+  {
+    "type": "&*",
+    "named": false
+  },
+  {
+    "type": "&+",
+    "named": false
+  },
+  {
+    "type": "&-",
     "named": false
   },
   {
@@ -2226,6 +2486,10 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "//",
     "named": false
   },
   {
@@ -2526,6 +2790,10 @@
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
     "named": false
   },
   {
