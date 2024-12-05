@@ -1678,10 +1678,6 @@
         "required": true,
         "types": [
           {
-            "type": "abstract_def",
-            "named": true
-          },
-          {
             "type": "array",
             "named": true
           },
@@ -1691,10 +1687,6 @@
           },
           {
             "type": "char",
-            "named": true
-          },
-          {
-            "type": "class",
             "named": true
           },
           {
@@ -1710,19 +1702,11 @@
             "named": true
           },
           {
-            "type": "def",
-            "named": true
-          },
-          {
             "type": "dir_pseudo_constant",
             "named": true
           },
           {
             "type": "endline_pseudo_constant",
-            "named": true
-          },
-          {
-            "type": "extend",
             "named": true
           },
           {
@@ -1746,14 +1730,6 @@
             "named": true
           },
           {
-            "type": "if",
-            "named": true
-          },
-          {
-            "type": "include",
-            "named": true
-          },
-          {
             "type": "instance_variable",
             "named": true
           },
@@ -1763,10 +1739,6 @@
           },
           {
             "type": "line_pseudo_constant",
-            "named": true
-          },
-          {
-            "type": "module",
             "named": true
           },
           {
@@ -1782,14 +1754,6 @@
             "named": true
           },
           {
-            "type": "require",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
             "type": "self",
             "named": true
           },
@@ -1798,19 +1762,11 @@
             "named": true
           },
           {
-            "type": "struct",
-            "named": true
-          },
-          {
             "type": "symbol",
             "named": true
           },
           {
             "type": "true",
-            "named": true
-          },
-          {
-            "type": "unless",
             "named": true
           }
         ]
@@ -2013,10 +1969,6 @@
         "required": true,
         "types": [
           {
-            "type": "abstract_def",
-            "named": true
-          },
-          {
             "type": "array",
             "named": true
           },
@@ -2026,10 +1978,6 @@
           },
           {
             "type": "char",
-            "named": true
-          },
-          {
-            "type": "class",
             "named": true
           },
           {
@@ -2045,19 +1993,11 @@
             "named": true
           },
           {
-            "type": "def",
-            "named": true
-          },
-          {
             "type": "dir_pseudo_constant",
             "named": true
           },
           {
             "type": "endline_pseudo_constant",
-            "named": true
-          },
-          {
-            "type": "extend",
             "named": true
           },
           {
@@ -2081,14 +2021,6 @@
             "named": true
           },
           {
-            "type": "if",
-            "named": true
-          },
-          {
-            "type": "include",
-            "named": true
-          },
-          {
             "type": "instance_variable",
             "named": true
           },
@@ -2098,10 +2030,6 @@
           },
           {
             "type": "line_pseudo_constant",
-            "named": true
-          },
-          {
-            "type": "module",
             "named": true
           },
           {
@@ -2117,14 +2045,6 @@
             "named": true
           },
           {
-            "type": "require",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
             "type": "self",
             "named": true
           },
@@ -2133,19 +2053,11 @@
             "named": true
           },
           {
-            "type": "struct",
-            "named": true
-          },
-          {
             "type": "symbol",
             "named": true
           },
           {
             "type": "true",
-            "named": true
-          },
-          {
-            "type": "unless",
             "named": true
           }
         ]
@@ -3252,10 +3164,6 @@
         "required": true,
         "types": [
           {
-            "type": "abstract_def",
-            "named": true
-          },
-          {
             "type": "array",
             "named": true
           },
@@ -3265,10 +3173,6 @@
           },
           {
             "type": "char",
-            "named": true
-          },
-          {
-            "type": "class",
             "named": true
           },
           {
@@ -3284,19 +3188,11 @@
             "named": true
           },
           {
-            "type": "def",
-            "named": true
-          },
-          {
             "type": "dir_pseudo_constant",
             "named": true
           },
           {
             "type": "endline_pseudo_constant",
-            "named": true
-          },
-          {
-            "type": "extend",
             "named": true
           },
           {
@@ -3320,14 +3216,6 @@
             "named": true
           },
           {
-            "type": "if",
-            "named": true
-          },
-          {
-            "type": "include",
-            "named": true
-          },
-          {
             "type": "instance_variable",
             "named": true
           },
@@ -3337,10 +3225,6 @@
           },
           {
             "type": "line_pseudo_constant",
-            "named": true
-          },
-          {
-            "type": "module",
             "named": true
           },
           {
@@ -3356,14 +3240,6 @@
             "named": true
           },
           {
-            "type": "require",
-            "named": true
-          },
-          {
-            "type": "return",
-            "named": true
-          },
-          {
             "type": "self",
             "named": true
           },
@@ -3372,19 +3248,11 @@
             "named": true
           },
           {
-            "type": "struct",
-            "named": true
-          },
-          {
             "type": "symbol",
             "named": true
           },
           {
             "type": "true",
-            "named": true
-          },
-          {
-            "type": "unless",
             "named": true
           }
         ]

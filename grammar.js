@@ -183,7 +183,7 @@ module.exports = grammar({
 
     if: $ => seq(
       'if',
-      field('condition', $._statement),
+      field('condition', $._expression),
       choice($._terminator, field('consequence', $.then)),
       field('alternative', optional(choice($.else, $.elsif))),
       'end',
@@ -191,7 +191,7 @@ module.exports = grammar({
 
     unless: $ => seq(
       'unless',
-      field('condition', $._statement),
+      field('condition', $._expression),
       choice($._terminator, field('consequence', $.then)),
       field('alternative', optional(choice($.else, $.elsif))),
       'end',
@@ -199,7 +199,7 @@ module.exports = grammar({
 
     elsif: $ => seq(
       'elsif',
-      field('condition', $._statement),
+      field('condition', $._expression),
       choice($._terminator, field('consequence', $.then)),
       field('alternative', optional(choice($.else, $.elsif))),
     ),
