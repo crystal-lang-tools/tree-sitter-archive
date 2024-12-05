@@ -20,6 +20,7 @@ const const_start = /[A-Z]/,
     SHIFT: 9,
     ADD: 10,
     MULTIPLY: 11,
+    CONDITIONAL: 99,
   };
 
 module.exports = grammar({
@@ -84,6 +85,8 @@ module.exports = grammar({
         $.extend,
         $.abstract_def,
         $.def,
+        prec(PREC.CONDITIONAL, $.if),
+        prec(PREC.CONDITIONAL, $.unless),
         $.return,
         $._expression,
       ),
@@ -178,6 +181,46 @@ module.exports = grammar({
         'end',
       ),
 
+    if: $ => seq(
+      'if',
+      field('condition', $._statement),
+      choice($._terminator, field('consequence', $.then)),
+      field('alternative', optional(choice($.else, $.elsif))),
+      'end',
+    ),
+
+    unless: $ => seq(
+      'unless',
+      field('condition', $._statement),
+      choice($._terminator, field('consequence', $.then)),
+      field('alternative', optional(choice($.else, $.elsif))),
+      'end',
+    ),
+
+    elsif: $ => seq(
+      'elsif',
+      field('condition', $._statement),
+      choice($._terminator, field('consequence', $.then)),
+      field('alternative', optional(choice($.else, $.elsif))),
+    ),
+
+    else: $ => seq(
+      'else',
+      optional($._terminator),
+      optional($._statements),
+    ),
+
+    then: $ => choice(
+      seq(
+        $._terminator,
+        $._statements,
+      ),
+      seq(
+        optional($._terminator),
+        'then',
+        optional($._statements),
+      ),
+    ),
     return: $ => seq('return', optional($._expression)),
 
     _expression: $ =>

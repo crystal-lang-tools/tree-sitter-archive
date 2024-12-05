@@ -547,3 +547,107 @@ return "Hello" + b
       (string
         (quoted_string))
       (identifier))))
+
+============
+If Statement
+============
+if a + b
+  "hey"
+end
+
+if a then
+  b + c
+end
+
+if a
+  b
+elsif c == d
+  e + f
+else
+  return "done"
+end
+
+---
+
+(source_file
+  (if
+    (binary_operation
+      (identifier)
+      (identifier))
+    (then
+      (string
+        (quoted_string))))
+  (if
+    (identifier)
+    (then
+      (binary_operation
+        (identifier)
+        (identifier))))
+  (if
+    (identifier)
+    (then
+      (identifier))
+    (elsif
+      (binary_operation
+        (identifier)
+        (identifier))
+      (then
+        (binary_operation
+          (identifier)
+          (identifier)))
+      (else
+        (return
+          (string
+            (quoted_string)))))))
+
+================
+Unless Statement
+================
+unless a + b
+  "hey"
+end
+
+unless a then
+  b + c
+end
+
+unless a
+  b
+elsif c == d
+  e + f
+else
+  return "done"
+end
+
+---
+
+(source_file
+  (unless
+    (binary_operation
+      (identifier)
+      (identifier))
+    (then
+      (string
+        (quoted_string))))
+  (unless
+    (identifier)
+    (then
+      (binary_operation
+        (identifier)
+        (identifier))))
+  (unless
+    (identifier)
+    (then
+      (identifier))
+    (elsif
+      (binary_operation
+        (identifier)
+        (identifier))
+      (then
+        (binary_operation
+          (identifier)
+          (identifier)))
+      (else
+        (return
+          (string
+            (quoted_string)))))))
