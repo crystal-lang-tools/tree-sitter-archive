@@ -84,6 +84,7 @@ module.exports = grammar({
         $.extend,
         $.abstract_def,
         $.def,
+        $.return,
         $._expression,
       ),
 
@@ -176,6 +177,8 @@ module.exports = grammar({
         optional($._statements),
         'end',
       ),
+
+    return: $ => seq('return', optional($._expression)),
 
     _expression: $ =>
       choice(
