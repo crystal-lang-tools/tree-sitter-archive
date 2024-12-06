@@ -64,7 +64,7 @@ stdlib_files.each do |stdlib_file|
   printf("%-63s %s %s\n", test.label, success ? PASS : FAIL, elapsed_ms)
 end
 
-printf("%% of success: %.2f%%\n", pass / stdlib_files.size)
+printf("%% of success: %.2f%%\n", 100 * (pass / stdlib_files.size))
 
 if failed != expected_fail
   abort("List of failed tests difer, check stdlib_failed.txt and stdlib_expected_to_fail.txt".colorize.red)
